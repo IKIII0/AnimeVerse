@@ -1,6 +1,7 @@
-
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
+import '../config/routes.dart';
 import '../widgets/app_scaffold.dart';
 import '../widgets/profile_button.dart';
 
@@ -179,12 +180,9 @@ class ProfileScreen extends StatelessWidget {
               margin: EdgeInsets.symmetric(horizontal: screenWidth * 0.02),
               child: ElevatedButton.icon(
                 onPressed: () {
-                  // Static dummy function
+                  context.go(AppRoutes.signIn);
                 },
-                icon: Icon(
-                  Icons.logout,
-                  size: screenWidth * 0.05,
-                ),
+                icon: Icon(Icons.logout, size: screenWidth * 0.05),
                 label: Text(
                   'Logout',
                   style: TextStyle(
@@ -193,11 +191,11 @@ class ProfileScreen extends StatelessWidget {
                   ),
                 ),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFFD34343), // Menyesuaikan warna merah pada gambar
+                  backgroundColor: const Color(
+                    0xFFD34343,
+                  ), // Menyesuaikan warna merah pada gambar
                   foregroundColor: Colors.white,
-                  padding: EdgeInsets.symmetric(
-                    vertical: screenHeight * 0.018,
-                  ),
+                  padding: EdgeInsets.symmetric(vertical: screenHeight * 0.018),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(screenWidth * 0.04),
                   ),
