@@ -40,6 +40,7 @@ class GenreList extends StatelessWidget {
             child: InkWell(
               borderRadius: BorderRadius.circular(screenWidth * 0.06),
               onTap: () {
+                // Laporkan genre yang ditekan ke atas
                 onGenreSelected?.call(genre);
               },
               child: Container(
@@ -49,7 +50,10 @@ class GenreList extends StatelessWidget {
                 ),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(screenWidth * 0.06),
-                  color: const Color(0xFF0b395e),
+                  // PERUBAHAN 2: warna chip aktif (di dalam BoxDecoration)
+                  color: isActive
+                      ? const Color(0xff1976D2)
+                      : const Color(0xFF0b395e),
                   boxShadow: [
                     BoxShadow(
                       color: Colors.black.withValues(alpha: 0.3),

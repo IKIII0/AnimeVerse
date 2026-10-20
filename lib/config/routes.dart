@@ -38,7 +38,7 @@ GoRouter createRouter() {
       ),
 
       GoRoute(
-        path: '$AppRoutes.details/:id',
+        path: '${AppRoutes.details}/:id',
         name: 'details',
         builder: (context, state) {
           final id = state.pathParameters['id']!;
